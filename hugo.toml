@@ -1,0 +1,80 @@
+baseURL = "https://enrikealonso.com/"
+languageCode = "es"
+defaultContentLanguage = "es"
+title = "Enrike Alonso"
+theme = "PaperMod"
+paginate = 10
+
+# Generar RSS para que la gente pueda seguirte sin algoritmos
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  author = "Enrike Alonso"
+  description = "DBA · 26 años en bases de datos, sistemas e infraestructura"
+  env = "production"
+  defaultTheme = "auto"   # auto detecta si el usuario prefiere dark/light
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false  # nada de botones de redes sociales
+  ShowToc = true            # tabla de contenidos en posts largos
+
+  [params.homeInfoParams]
+    Title = "Kaixo 👋"
+    Content = """
+DBA con 26 años de experiencia. Aquí documento lo que aprendo, \
+lo que rompo y lo que construyo. Bases de datos, sistemas, \
+infraestructura y todo lo que me pica la curiosidad.
+"""
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  # Descomenta y añade los que vayas usando:
+  # [[params.socialIcons]]
+  #   name = "github"
+  #   url = "https://github.com/TU_USUARIO"
+  #
+  # [[params.socialIcons]]
+  #   name = "email"
+  #   url = "mailto:tu@enrikealonso.com"
+
+  [params.search]
+    enable = true
+
+# Menú de navegación
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 1
+
+[[menu.main]]
+  name = "Labs"
+  url = "/labs/"
+  weight = 2
+
+[[menu.main]]
+  name = "Sobre mí"
+  url = "/about/"
+  weight = 3
+
+# Taxonomías
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# URLs limpias
+[permalinks]
+  blog = "/blog/:slug/"
+  labs = "/labs/:slug/"
+
+# Opciones de markup
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+  [markup.goldmark.renderer]
+    unsafe = true    # permite HTML en markdown si lo necesitas
