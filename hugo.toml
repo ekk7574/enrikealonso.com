@@ -3,7 +3,9 @@ languageCode = "es"
 defaultContentLanguage = "es"
 title = "Enrike Alonso"
 theme = "PaperMod"
-paginate = 10
+
+[pagination]
+  pagerSize = 10
 
 # Generar RSS para que la gente pueda seguirte sin algoritmos
 [outputs]
